@@ -26,5 +26,7 @@ public class EventsDb {
 	//Print of the list Of Events
 	public static void showListOfEvents() {
 		System.out.println(listOfEvents);
+		
+		
 	}
 }

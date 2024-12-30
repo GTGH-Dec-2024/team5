@@ -16,7 +16,7 @@ public class Event {
 	private int minute;
 	private Organizer organizer;
 	private String status;
-	//private List<Organizer> visitors= new ArrayList<Organizer>();
+	//private static List<Visitor> visitors= new ArrayList<Visitor>();
 	private int countVisitors;
 	
 	//Constractor
@@ -198,7 +198,11 @@ public class Event {
 	public void addToCountVisitors() {
 		this.countVisitors++;
 	}
-
+	
+	public void removeToCountVisitors() {
+		this.countVisitors--;
+	}
+	
 	
 	
 }
