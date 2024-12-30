@@ -13,7 +13,7 @@ public class Event {
 	private int hour;
 	private int minute;
 	private Organizer organizer;
-	private boolean status;
+	private String status;
 	//private List<Organizer> visitors= new ArrayList<Organizer>();
 	private int countVisitors;
 	
@@ -31,7 +31,7 @@ public class Event {
 		this.hour = hour;
 		this.minute = minute;
 		this.organizer = organizer;
-		this.status = false;
+		this.status = "notApprovedAdded";
 		this.countVisitors=0;
 	}
 
@@ -169,13 +169,13 @@ public class Event {
 
 
 
-	public boolean isStatus() {
+	public String isStatus() {
 		return status;
 	}
 
 
 
-	public void setStatus(boolean status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
