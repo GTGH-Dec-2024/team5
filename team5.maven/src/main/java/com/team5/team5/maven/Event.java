@@ -1,3 +1,5 @@
+package com.team5.team5.maven;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +19,7 @@ public class Event {
 	//private List<Organizer> visitors= new ArrayList<Organizer>();
 	private int countVisitors;
 	
+	//Constractor
 	public Event(String title, String theme, String description, String location, int maxCapacity, int day,
 			String month, int year, int hour, int minute,Organizer organizer) {
 	
@@ -35,7 +38,7 @@ public class Event {
 		this.countVisitors=0;
 	}
 
-	
+	//Getters + Setters
 
 	public String getTitle() {
 		return title;
@@ -168,33 +171,34 @@ public class Event {
 	}
 
 
-
-	public String isStatus() {
+	public String getStatus() {
 		return status;
 	}
-
-
 
 	public void setStatus(String status) {
 		this.status = status;
 	}
 
+	public int getCountVisitors() {
+		return countVisitors;
+	}
 
+	public void setCountVisitors(int countVisitors) {
+		this.countVisitors = countVisitors;
+	}
 
+	
+
+	//ToString
 	@Override
 	public String toString() {
-		return "Event [title=" + title + ", theme=" + theme + ", description=" + description + ", location=" + location
-				+ ", maxCapacity=" + maxCapacity + ", day=" + day + ", month=" + month + ", year=" + year + ", hour="
-			+ hour + ", minute=" + minute + ", organizer=" + organizer + ", status=" + status + "]";
+		return "Event [title=" + title + " organizer=" + organizer.getName() + ", status=" + status + "]";
 	}
 	
-	
-	//access the list of visitors
-//	public void listOfVisitors(Visitor v) {
-//		if(countVisitors < maxCapacity) {
-//			
-//		}
-//	}
+	public void addToCountVisitors() {
+		this.countVisitors++;
+	}
+
 	
 	
 }
