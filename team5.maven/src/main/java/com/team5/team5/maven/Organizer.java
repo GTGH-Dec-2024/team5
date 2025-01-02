@@ -1,7 +1,6 @@
 package com.team5.team5.maven;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class Organizer {
 	private int afm ;
@@ -67,14 +66,12 @@ public class Organizer {
 	//looks for an event with the specific title this organizer had previously added in the list and then it gets deleted and put in the list with the deleted events
 	public void deleteEvent(String title) {
 		for(Event e :EventsDb.getListOfEvents()) {
-			if(title.equals(e.getTitle()) && e.getOrganizer() == this && !(e.getStatus().equals("notApprovedDeleted"))) {
-
-				EventsDb.deleteFromEvent(e);
-				
+			if(title.equals(e.getTitle()) && e.getOrganizer() == this && !(e.getStatus().equals("toBeDeleted"))) {
+				EventsDb.deleteFromEvent(e);				
 			}
 			
 		}
-		//EventsDb.showListOfEvents();
+		
 		
 	}
 	//Shows the list of events the specific organizer has made 
@@ -85,5 +82,7 @@ public class Organizer {
 			}
 		}
 	}
+	
+	
 	
 }

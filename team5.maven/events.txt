@@ -1,0 +1,3 @@
+Event [title=The famous dog, organizer=Mary, status=toBeAdded]
+Event [title=a pin drop, organizer=Mary, status=toBeAdded]
+Event [title=disco, organizer=John, status=toBeAdded]

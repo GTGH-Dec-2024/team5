@@ -1,7 +1,6 @@
 package com.team5.team5.maven;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class Event {
 	private String title;
@@ -34,7 +33,7 @@ public class Event {
 		this.hour = hour;
 		this.minute = minute;
 		this.organizer = organizer;
-		this.status = "notApprovedAdded";
+		this.status = "toBeAdded";
 		this.countVisitors=0;
 	}
 
@@ -192,7 +191,7 @@ public class Event {
 	//ToString
 	@Override
 	public String toString() {
-		return "Event [title=" + title + " organizer=" + organizer.getName() + ", status=" + status + "]";
+		return "Event [title=" + title + ", organizer=" + organizer.getName() + ", status=" + status + "]";
 	}
 	
 	public void addToCountVisitors() {
