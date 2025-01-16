@@ -162,6 +162,21 @@ public class ApprovalRequestServices {
 		}
 		return requests;
 	}
+//	
+//	public List<ApprovalRequest> deleteWithoutRequest(Integer eventId, Integer employeeId){
+//		for(Event e: eventServices.getAllEvents()) {
+//			if(e.getId().equals(eventId)) {
+//				this.makeDeletionApprovalRequest(e.getOrganizer().getAfm(),eventId);
+//				for(ApprovalRequest req: this.getAllUnprocessedRequestsByType("delete") ) {
+//					if(req.getTheEvent().getId().equals(eventId)) {
+//						this.approveRequest(req.getId(),employeeId,null);
+//					}
+//				}
+//			}
+//		}
+//		return this.getAllDeletionsByEmployeeId(employeeId);
+//	}
+	
 	
 	
 }

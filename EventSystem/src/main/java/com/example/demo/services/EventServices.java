@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.example.demo.users.Employee;
 import com.example.demo.users.Event;
 import com.example.demo.users.Organizer;
 
@@ -23,6 +24,8 @@ public class EventServices {
 	OrganizerServices organizerServices;
 //	@Autowired
 //	ApprovalRequestServices approvalRequestServices;
+	@Autowired
+	EmployeeServices employeeServices;
 
 	//id generator
 	private Integer UniqEventID() {
@@ -90,6 +93,16 @@ public class EventServices {
 		}
 		throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Event with id " + id + " doesnt exist");
 	}
+	
+	public void deleteEventByEmployee(Integer employeeId, Integer eventId) {
+		for (Employee emp: employeeServices.getAllEmployees()) {
+			if(emp.getId().equals(employeeId)) {
+				this.deleteEvent(eventId);
+			}
+		}
+	}
+	
+	
 	//Employee Approves Addition of Event
 	
 	public void approveEvent(Integer id){
@@ -102,7 +115,6 @@ public class EventServices {
 		throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Event with id " + id + " doesnt exist");
 		
 	}
-	
 	
 	//Search With Stream
 	public List<Event> searchEvents( String theme,  String location,  Integer day,
