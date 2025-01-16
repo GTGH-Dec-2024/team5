@@ -109,14 +109,14 @@ public class ApprovalRequestServices {
                 .collect(Collectors.toList());
 		return filteredRequests;
 	}
-	
-	public List<ApprovalRequest> getAllDeletionsByEmployeeId(Integer employeeId){
-		List<ApprovalRequest> filteredRequests = requests.stream()
-                .filter(request -> request.getId() == employeeId && request.getSubmittedBy().equals(null))
-                .collect(Collectors.toList());
-		return filteredRequests;
-	}
-	
+//	
+//	public List<ApprovalRequest> getAllDeletionsByEmployeeId(Integer employeeId){
+//		List<ApprovalRequest> filteredRequests = requests.stream()
+//                .filter(request -> request.getId() == employeeId && request.getSubmittedBy().equals(null))
+//                .collect(Collectors.toList());
+//		return filteredRequests;
+//	}
+//	
 	public List<ApprovalRequest> rejectRequest(Integer requestId,Integer employeeId, String comments){
 		for(Employee employee : employeeServices.getAllEmployees()) {
 			if(employee.getId().equals(employeeId)) {
