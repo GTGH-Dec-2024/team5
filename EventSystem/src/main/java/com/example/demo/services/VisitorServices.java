@@ -55,19 +55,17 @@ public class VisitorServices {
 	}
 
 	// Remove visitor from the list
-	public List<Visitor> removeVisitor(Integer ID) {
-		Visitor visitorToRemove = visitors.stream().filter(visitor -> visitor.getID().equals(ID)).findFirst()
-				.orElse(null);
+	public List<Visitor> removeVisitor(Integer id) {
+        for (Visitor visitor : visitors) {
+            if (visitor.getID().equals(id)) {
+                visitors.remove(visitor);
+                return visitors;
+            }
+            reservationService.removeAllReservationsForSpecificVisitor(id);
+        }
+        return visitors;
 
-		if (visitorToRemove == null) {
-			System.out.println("No visitor found with ID: " + ID);
-			return visitors;
-		}
-
-		reservationService.removeAllReservationsForSpecificVisitor(ID);
-		visitors.remove(visitorToRemove);
-		return visitors;
-	}
+    }
 
 	// Update visitor's informations
 	public List<Visitor> updateVisitor(Integer ID, String newName, String newSurname, String newEmail) {

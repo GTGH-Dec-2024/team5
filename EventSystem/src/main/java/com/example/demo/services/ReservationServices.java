@@ -95,8 +95,8 @@ public class ReservationServices implements ReservationServiceInterface {
 	@Override
 	public List<Reservation> removeAllReservationsForSpecificVisitor(Integer visitorID) {
 
-		return allReservations.stream().filter(reservation -> reservation.getVisitor().getID().equals(visitorID))
-				.collect(Collectors.toList());
+		allReservations.removeIf(reservation -> reservation.getVisitor().getID().equals(visitorID));
+		return allReservations;
 	}
 
 	// Update reservation, update visitor's data
